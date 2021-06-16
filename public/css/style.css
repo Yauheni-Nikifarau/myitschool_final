@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    border: none;
     box-sizing: border-box;
 }
 
@@ -244,6 +243,94 @@ ul {
     color: #062685;
     font-weight: bold;
 }
+.form {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.form-raw {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.form-col {
+    width: 300px;
+}
+
+.form h4 {
+    margin-top: 10px;
+    font-size: 26px;
+}
+
+.form-text_input, .form-select {
+    display: block;
+    width: 80%;
+    height: 25px;
+    margin: 0 auto;
+}
+
+.form-input_group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-input_cell {
+    width: 48%;
+}
+
+.form-inner_input {
+    width: 98%;
+    height: 25px;
+}
+
+.form-button-group {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-submit, .btn-reset {
+    margin: 0 20px;
+    border-radius: 3px;
+    height: 40px;
+    line-height: 20px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.btn-submit {
+    background-color: #002073;
+}
+
+.btn-reset {
+    background-color: #860000;
+}
+
+.pagination {
+    margin: 20px auto;
+    width: 240px;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.paginate-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+}
+
+
 
 @media screen and (max-width: 650px) {
      .promo_bg {
