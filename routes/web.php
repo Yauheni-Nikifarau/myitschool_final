@@ -22,10 +22,6 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/contacts', function () {
-    return view('contacts');
-});
-
 Route::get('/trips', function () {
     return view('trips');
 });
@@ -48,4 +44,12 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return view('register');
+});
+
+Route::get('/myorders', function () {
+    return view('myOrders');
+});
+
+Route::get('/order', function () {
+    return view('order');
 });
