@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TagsAssign;
 use Illuminate\Database\Seeder;
 
 class TagsAssignsTableSeeder extends Seeder

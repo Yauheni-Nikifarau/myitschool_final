@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Trip;
+use DateInterval;
+use DateTime;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TripFactory extends Factory

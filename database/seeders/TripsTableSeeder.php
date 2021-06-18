@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Trip;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Storage;
 
 class TripsTableSeeder extends Seeder
 {
@@ -13,8 +15,8 @@ class TripsTableSeeder extends Seeder
      */
     public function run()
     {
-        \Storage::deleteDirectory('public/tripsWallpapers');
-        \Storage::makeDirectory('public/tripsWallpapers');
+        Storage::deleteDirectory('public/tripsWallpapers');
+        Storage::makeDirectory('public/tripsWallpapers');
         Trip::factory()->count(50)->create();
     }
 }

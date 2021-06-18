@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Order;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,15 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
         $this->call(DiscountsTableSeeder::class);
         $this->call(TagsTableSeeder::class);
-        $this->call(HotelTableSeeder::class);
-        $this->call(MessagesTableSeeder::class);
+        $this->call(HotelsTableSeeder::class);
         $this->call(TripsTableSeeder::class);
         $this->call(TagsAssignsTableSeeder::class);
         $this->call(OrdersTableSeeder::class);
-        $this->call(HotelsLatLonSeeder::class);
+        $this->call(AdminTablesSeeder::class);
 
 
 

@@ -3,6 +3,11 @@
 namespace App\Models;
 
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+
 class Weather
 {
     const url = "https://api.openweathermap.org/data/2.5/onecall";
