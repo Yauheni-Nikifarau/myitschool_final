@@ -15,4 +15,16 @@ Route::group([
 
     $router->resource('users', UsersController::class);
 
+    $router->resource('trips', TripController::class);
+
+    $router->resource('hotels', HotelsController::class);
+
+    $router->resource('orders', OrdersController::class);
+
+    $router->resource('tags', TagsController::class);
+
+    $router->get('find/hotels', 'TripController@findHotelsByName');
+    $router->get('find/discounts', 'TripController@findDiscountsByValue');
+
+
 });

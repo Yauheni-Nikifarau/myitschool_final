@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\TripsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/', [MainController::class, 'index']);
+Route::get('/trips/{slug}', [TripsController::class, 'show']);
 
 Route::get('/about', function () {
     return view('about');

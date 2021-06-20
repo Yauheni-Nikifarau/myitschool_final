@@ -1,17 +1,23 @@
 <div class="container trip-order-page">
     <div class="trip-page">
-        <h1>Trip name</h1>
+        <h1>{{ $trip['name'] }}</h1>
 
-        <p>Hotel: <a href="/hotel">hotel name link</a></p>
+        <p>Hotel: <a href="{{ $trip['hotelSlug'] }}">hotel name link</a></p>
 
-        <p>Price: 1000$</p>
+        <p>Price: {{ $trip['price'] }}$</p>
 
-        <p>Dates: 12.12.12 - 12.12.12</p>
+        @if ($trip['discount'])
+            <p>Discount: {{ $trip['discount'] }}%</p>
+
+            <p>End Price: {{ $trip['endPrice'] }}$</p>
+        @endif
+
+        <p>Dates: {{ $trip['dates'] }}</p>
 
         <div>
-            <img src="/img/hotel.jpg" alt="hotel">
+            <img src="{{ $trip['image'] }}" alt="hotel">
         </div>
 
-        <a href="#" class="header-sign buy-btn">BUY</a>
+        <a href="/trips/buy/{{ $trip['tripSlug'] }}" class="header-sign buy-btn">BUY</a>
     </div>
 </div>
