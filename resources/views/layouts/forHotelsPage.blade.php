@@ -1,84 +1,20 @@
 <div class="container">
     <div class="album">
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
+        @foreach($hotelsList as $hotel)
+            <div class="card">
+                <img src="{{ $hotel['image'] }}" alt="hotel" class="card-img">
+                <a href="{{ $hotel['slugDetails'] }}" class="card-title">{{ $hotel['name'] }}</a>
+                <div class="card-footer">
+                    <a class="header-sign" href="{{ $hotel['slugDetails'] }}">Details</a>
+                    <a class="header-sign" href="{{ $hotel['slugTrips'] }}">Trips</a>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/img/hotel.jpg" alt="hotel" class="card-img">
-            <a href="trip" class="card-title">Hotel name here</a>
-            <div class="card-footer">
-                <a class="header-sign" href="#">Details</a>
-                <a class="header-sign" href="#">Trips</a>
-            </div>
-        </div>
-    </div> 
+        @endforeach
+    </div>
 
     <div class="pagination">
-        <a href="#" class="paginate-btn">1</a>
-        <a href="#" class="paginate-btn">2</a>
-        <a href="#" class="paginate-btn">3</a>
-        <a href="#" class="paginate-btn">4</a>
-        <a href="#" class="paginate-btn">5</a>
+        @for ($i = 1; $i <= $pages; $i++)
+            <a href="/hotels?page={{ $i }}" class="paginate-btn">{{ $i }}</a>
+        @endfor
     </div>
 </div>

@@ -17,7 +17,7 @@ class TripsController extends Controller
         ]);
     }
 
-    protected function resourceTrip ($trip) {
+    private function resourceTrip ($trip) {
         $hotelSlug = str_replace(' ', '_', $trip->hotel->name) . '_' . $trip->hotel->id;
         $price = round($trip->price, 0);
         $discountValue = $trip->discount->value ?? 0;

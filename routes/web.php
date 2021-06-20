@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TripsController;
+use App\Http\Controllers\HotelsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,7 @@ use App\Http\Controllers\TripsController;
 
 Route::get('/', [MainController::class, 'index']);
 Route::get('/trips/{slug}', [TripsController::class, 'show']);
+Route::get('/hotels', [HotelsController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about');
@@ -31,9 +34,7 @@ Route::get('/trip', function () {
     return view('trip');
 });
 
-Route::get('/hotels', function () {
-    return view('hotels');
-});
+
 
 Route::get('/hotel', function () {
     return view('hotel');
