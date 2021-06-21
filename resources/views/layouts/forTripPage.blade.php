@@ -18,6 +18,6 @@
             <img src="{{ $trip['image'] }}" alt="hotel">
         </div>
 
-        <a href="/trips/buy/{{ $trip['tripSlug'] }}" class="header-sign buy-btn">BUY</a>
+        <a href="/trips/{{ $trip['tripSlug'] }}/buy" class="header-sign buy-btn">BUY</a>
     </div>
 </div>

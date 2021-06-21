@@ -430,6 +430,21 @@ ul {
     margin: 10px 0;
 }
 
+.logreg-group .is-invalid {
+    background-color: rgba(179, 0, 0, 0.52);
+    border-radius: 5px;
+    margin-bottom: 0;
+    border: 1px solid black;
+    height: 34px;
+}
+
+.invalid-feedback {
+    display: block;
+    font-size: 10px;
+    text-align: center;
+    color: #9f191f;
+}
+
 @media  screen and (max-width: 380px) {
     .trip-order-page img {
         width: 90%;

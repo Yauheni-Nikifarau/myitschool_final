@@ -18,7 +18,7 @@ class TripsController extends Controller
     }
 
     private function resourceTrip ($trip) {
-        $hotelSlug = str_replace(' ', '_', $trip->hotel->name) . '_' . $trip->hotel->id;
+        $hotelSlug = '/hotels/' . str_replace(' ', '_', $trip->hotel->name) . '_' . $trip->hotel->id;
         $price = round($trip->price, 0);
         $discountValue = $trip->discount->value ?? 0;
         $endPrice = $trip->price * ((100 - $discountValue) / 100);
