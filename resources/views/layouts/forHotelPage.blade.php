@@ -1,8 +1,12 @@
 <div class="container">
     <div class="hotel-page">
-        <h1>Hotel name here</h1>
+        <h1>{{ $hotel['name'] }} hotel</h1>
 
-        <p>Description: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae qui rem sit recusandae atque ipsam quam voluptas. Pariatur vitae esse, exercitationem quaerat earum quo vel praesentium. Vitae illo nulla quidem?</p>
+        <div>
+            <img src="{{ $hotel['image'] }}" alt="hotel">
+        </div>
+
+        <p>Description: {{ $hotel['description'] }}</p>
 
         <h3>Weather Forecast on the nearest 7 days at this hotel's area</h3>
 
@@ -18,75 +22,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <th scope="row">1.06</th>
-                <td>Clear sky</td>
-                <td>+19</td>
-                <td>+22</td>
-                <td>+20</td>
-                <td>+15</td>
-                </tr>
-                <tr>
-                    <th scope="row">2.06</th>
-                    <td>Clear sky</td>
-                    <td>+19</td>
-                    <td>+22</td>
-                    <td>+20</td>
-                    <td>+15</td>
-                </tr>
-                <tr>
-                    <th scope="row">3.06</th>
-                    <td>Clear sky</td>
-                    <td>+19</td>
-                    <td>+22</td>
-                    <td>+20</td>
-                    <td>+15</td>
-                </tr>
-                <tr>
-                    <th scope="row">4.06</th>
-                    <td>Clear sky</td>
-                    <td>+19</td>
-                    <td>+22</td>
-                    <td>+20</td>
-                    <td>+15</td>
-                </tr>
-                <tr>
-                    <th scope="row">5.06</th>
-                    <td>Clear sky</td>
-                    <td>+19</td>
-                    <td>+22</td>
-                    <td>+20</td>
-                    <td>+15</td>
-                </tr>
-                <tr>
-                    <th scope="row">6.06</th>
-                    <td>Clear sky</td>
-                    <td>+19</td>
-                    <td>+22</td>
-                    <td>+20</td>
-                    <td>+15</td>
-                </tr>
-                <tr>
-                    <th scope="row">7.06</th>
-                    <td>Clear sky</td>
-                    <td>+19</td>
-                    <td>+22</td>
-                    <td>+20</td>
-                    <td>+15</td>
-                </tr>
-                <tr>
-                    <th scope="row">8.06</th>
-                    <td>Clear sky</td>
-                    <td>+19</td>
-                    <td>+22</td>
-                    <td>+20</td>
-                    <td>+15</td>
-                </tr>
-                
+                @foreach($hotel['weather'] as $day)
+                    <tr>
+                        <th scope="row">{{ $day['date'] }}</th>
+                        <td>{{ $day['weather'] }}</td>
+                        <td>{{ $day['morning'] }}</td>
+                        <td>{{ $day['day'] }}</td>
+                        <td>{{ $day['evening'] }}</td>
+                        <td>{{ $day['night'] }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
 
-        <a href="/trips" class="header-sign">Hotel's trips</a>
+        <a href="/trips?hotel={{ $hotel['slug'] }}" class="header-sign">Hotel's trips</a>
 
     </div>
 </div>

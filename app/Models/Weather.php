@@ -80,15 +80,12 @@ class Weather
         $response = [];
         foreach ($data as $dayData) {
             $response[] = [
-                'date' => Carbon::parse($dayData["dt"])->format('Y-m-d'),
-                'weatherShort' => $dayData['weather'][0]['main'],
-                'weatherFull' => $dayData['weather'][0]['description'],
-                'pressure' => $dayData['pressure'],
-                'dayTemperature' => $dayData['temp']['day'],
-                'nightTemperature' => $dayData['temp']['night'],
-                'eveningTemperature' => $dayData['temp']['eve'],
-                'morningTemperature' => $dayData['temp']['morn'],
-                'windSpeed' => $dayData['wind_speed']
+                'date' => Carbon::parse($dayData["dt"])->format('d.m'),
+                'weather' => $dayData['weather'][0]['description'],
+                'day' => $dayData['temp']['day'] < 0 ? round($dayData['temp']['day']) : "+" . round($dayData['temp']['day']),
+                'night' => $dayData['temp']['night'] < 0 ? round($dayData['temp']['night']) : "+" . round($dayData['temp']['night']),
+                'evening' => $dayData['temp']['eve'] < 0 ? round($dayData['temp']['eve']) : "+" . round($dayData['temp']['eve']),
+                'morning' => $dayData['temp']['morn'] < 0 ? round($dayData['temp']['morn']) : "+" . round($dayData['temp']['morn'])
             ];
         }
         return $response;

@@ -24,31 +24,15 @@ use App\Http\Controllers\HotelsController;
 Route::get('/', [MainController::class, 'index']);
 Route::get('/trips/{slug}', [TripsController::class, 'show']);
 Route::get('/hotels', [HotelsController::class, 'index']);
+Route::get('/hotels/{slug}', [HotelsController::class, 'show']);
+Route::get('/trips', [TripsController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/trips', function () {
-    return view('trips');
-});
-
-Route::get('/trip', function () {
-    return view('trip');
-});
-
-
-
-Route::get('/hotel', function () {
-    return view('hotel');
-});
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/register', function () {
-    return view('register');
+Route::get('/contacts', function () {
+    return view('contacts');
 });
 
 Route::get('/myorders', function () {
@@ -59,7 +43,7 @@ Route::get('/order', function () {
     return view('order');
 });
 
-Route::get('/login', [LoginController::class, 'showLoginForm']);
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm']);

@@ -1,6 +1,6 @@
 @extends('layouts.common')
 
-@section('title') Hotels @endsection
+@section('title') About us @endsection
 
 @section('content')
 

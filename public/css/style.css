@@ -445,6 +445,10 @@ ul {
     color: #9f191f;
 }
 
+.hotel-page .header-sign {
+    margin-bottom: 10px;
+}
+
 @media  screen and (max-width: 380px) {
     .trip-order-page img {
         width: 90%;
