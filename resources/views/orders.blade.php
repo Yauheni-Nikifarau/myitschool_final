@@ -8,7 +8,7 @@
 
     <main>
 
-        @include('layouts.forMyOrdersPage')
+        @include('layouts.forOrdersPage')
 
     </main>
 

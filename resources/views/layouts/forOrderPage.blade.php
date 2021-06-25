@@ -1,8 +1,13 @@
 <div class="container trip-order-page">
-    <img src="/img/hotel.jpg" alt="hotel">
-    <h2>Order #2134532</h2>
-    <p>Price: 1950$</p>
-    <p>You have not paid this trip and reservetion expires 12.12.2021 at 12.12</p>
-    <a href="#" class="header-sign buy-btn">PDF</a>
-    <a href="#" class="header-sign buy-btn">DOC</a>
+    <img src="/storage/{{ $order['image'] }}" alt="hotel">
+    <h2>Order #{{ $order['id'] }}</h2>
+    <p>Price: {{ $order['price'] }}$</p>
+    @if ($order['paid'])
+        <p>You have paid this order</p>
+    @else
+        <p>You have not paid this trip and reservetion expires {{ $order['reservation_expires'] }}</p>
+    @endif
+    <p>Download details:</p>
+    <a href="/orders/{{ $order['id'] }}/report?extension=pdf" class="header-sign buy-btn" target="_blank">PDF</a>
+    <a href="/orders/{{ $order['id'] }}/report?extension=docx" class="header-sign buy-btn" target="_blank">DOC</a>
 </div>

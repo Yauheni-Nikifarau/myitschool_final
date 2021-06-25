@@ -19,5 +19,9 @@
         </div>
 
         <a href="/trips/{{ $trip['tripSlug'] }}/buy" class="header-sign buy-btn">BUY</a>
+
+        @foreach($errors->messages as $message)
+            <?php var_dump($message); ?>
+        @endforeach
     </div>
 </div>

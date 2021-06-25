@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\HotelsController;
 
 Route::get('/', [MainController::class, 'index']);
 Route::get('/trips/{slug}', [TripsController::class, 'show']);
+Route::get('/trips/{slug}/buy', [OrderController::class, 'store'])->middleware('auth');
 Route::get('/hotels', [HotelsController::class, 'index']);
 Route::get('/hotels/{slug}', [HotelsController::class, 'show']);
 Route::get('/trips', [TripsController::class, 'index']);
@@ -35,13 +37,12 @@ Route::get('/contacts', function () {
     return view('contacts');
 });
 
-Route::get('/myorders', function () {
-    return view('myOrders');
-})->middleware('auth');
-
-Route::get('/order', function () {
-    return view('order');
+Route::middleware('auth')->prefix('orders')->group(function () {
+    Route::get('/', [OrderController::class, 'index']);
+    Route::get('/{id}', [OrderController::class, 'show']);
+    Route::get('/{id}/report', [OrderController::class, 'report']);
 });
+
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);

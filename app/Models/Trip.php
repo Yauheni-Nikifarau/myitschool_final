@@ -9,6 +9,8 @@ class Trip extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['reservation'];
+
     /**
      * returns information about orders for this trip
      *
