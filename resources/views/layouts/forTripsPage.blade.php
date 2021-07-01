@@ -1,5 +1,10 @@
 <div class="container">
     <div class="album">
+        @if (count($tripList) == 0)
+            <div class="info warning">
+                Empty result
+            </div>
+        @endif
         @foreach($tripList as $trip)
             @include('layouts.tripCard')
         @endforeach

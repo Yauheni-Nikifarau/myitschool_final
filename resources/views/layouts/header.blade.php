@@ -18,7 +18,7 @@
                 <li><a href="/hotels" class="header-navigation-link">Hotels</a></li>
                 <li><a href="/about" class="header-navigation-link">About us</a></li>
                 @if (auth()->check())
-                <li><a href="/myorders" class="header-navigation-link">My Orders</a></li>
+                <li><a href="/orders" class="header-navigation-link">My Orders</a></li>
                 @endif
             </ul>
         </nav>

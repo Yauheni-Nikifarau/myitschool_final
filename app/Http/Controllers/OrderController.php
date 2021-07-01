@@ -35,6 +35,9 @@ class OrderController extends Controller
             },
 
         ])->find($id);
+        if (!$order) {
+            return redirect('/404');
+        }
         return view('order', [
             'order' => $this->orderResource($order)
         ]);

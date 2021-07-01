@@ -58,6 +58,9 @@ class TripsController extends Controller
         preg_match('/_[0-9]+$/', $slug, $matches);
         $trip_id = substr(end($matches), 1);
         $trip = Trip::with(['hotel', 'discount', 'tags'])->find($trip_id);
+        if (!$trip) {
+            return redirect('/404');
+        }
         return view('trip', [
             'trip' => $this->resourceTrip($trip)
         ]);

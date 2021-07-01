@@ -14,6 +14,11 @@
     <div class="container">
 
         <h1 class="group-title">The latest offers</h1>
+        @if (count($latestList) == 0)
+            <div class="info warning">
+                Empty result
+            </div>
+        @endif
         <div class="album">
             @foreach($latestList as $trip)
                 @include('layouts.tripCard')
@@ -21,6 +26,11 @@
         </div>
 
         <h1 class="group-title">Hot tours</h1>
+        @if (count($hotList) == 0)
+            <div class="info warning">
+                Empty result
+            </div>
+        @endif
         <div class="album">
             @foreach($hotList as $trip)
                 @include('layouts.tripCard')
@@ -28,6 +38,11 @@
         </div>
 
         <h1 class="group-title">35% off</h1>
+        @if (count($offList) == 0)
+            <div class="info warning">
+                Empty result
+            </div>
+        @endif
         <div class="album">
             @foreach($offList as $trip)
                 @include('layouts.tripCard')

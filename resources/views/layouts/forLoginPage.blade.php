@@ -23,6 +23,11 @@
         </div>
         <p>If you don't have an account <a href="/register">press here for registration</a></p>
 
+        @error('auth')
+            <div class="info danger">
+                Auth failed
+            </div>
+        @enderror
         <div class="form-button-group" role="group">
             <button type="submit" class="btn-submit">Submit</button>
             <button type="reset" class="btn-reset">Reset</button>

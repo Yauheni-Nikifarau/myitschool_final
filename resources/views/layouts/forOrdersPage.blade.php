@@ -28,5 +28,10 @@
             @endforeach
         </tbody>
     </table>
+    @if (count($ordersList) == 0)
+        <div class="info warning">
+            Empty result
+        </div>
+    @endif
 
 </div>

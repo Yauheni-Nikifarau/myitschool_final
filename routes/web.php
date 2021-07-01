@@ -2,12 +2,11 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\OrderController;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController;
-use App\Http\Controllers\TripsController;
 use App\Http\Controllers\HotelsController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\TripsController;
+use Illuminate\Support\Facades\Route;
 
 
 /*
@@ -31,6 +30,10 @@ Route::get('/trips', [TripsController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about');
+});
+
+Route::get('/404', function () {
+    return view('404');
 });
 
 Route::get('/contacts', function () {

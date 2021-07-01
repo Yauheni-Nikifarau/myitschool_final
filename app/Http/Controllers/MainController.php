@@ -27,7 +27,7 @@ class MainController extends Controller
         foreach ($tripsOfDiscount as $trip) {
             $off35ArrayOfId[] = $trip->id;
         }
-        $offList = Trip::with(['discount'])->select(['id', 'name', 'price', 'image', 'date_in', 'date_out'])->where('reservation', false)->whereIn('id', $hotListArrayOfId)->orderBy('created_at', 'desc')->limit(3)->get();
+        $offList = Trip::with(['discount'])->select(['id', 'name', 'price', 'image', 'date_in', 'date_out'])->where('reservation', false)->whereIn('id', $off35ArrayOfId)->orderBy('created_at', 'desc')->limit(3)->get();
         return view('main', [
             'latestList' => $this->tripsCollectionResource($latestTrips),
             'hotList' => $this->tripsCollectionResource($hotTourList),

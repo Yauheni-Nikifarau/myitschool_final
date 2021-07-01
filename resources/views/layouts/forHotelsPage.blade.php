@@ -1,5 +1,10 @@
 <div class="container">
     <div class="album">
+        @if (count($hotelsList) == 0)
+            <div class="info warning">
+                Empty result
+            </div>
+        @endif
         @foreach($hotelsList as $hotel)
             <div class="card">
                 <img src="{{ $hotel['image'] }}" alt="hotel" class="card-img">

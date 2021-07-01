@@ -20,6 +20,9 @@ class HotelsController extends Controller
         preg_match('/_[0-9]+$/', $slug, $matches);
         $hotel_id = substr(end($matches), 1);
         $hotel = Hotel::find($hotel_id);
+        if (!$hotel) {
+            return redirect('/404');
+        }
         return view('hotel', [
             'hotel' => $this->resourceHotel($hotel)
         ]);
@@ -42,7 +45,7 @@ class HotelsController extends Controller
         $resultCollection = [];
         foreach ($hotelsCollection as $hotel) {
             $slugDetails = '/hotels/' . str_replace(' ', '_', $hotel->name) . '_' . $hotel->id;
-            $slugTrips = '/trips?hotel=' . $slugDetails;
+            $slugTrips = '/trips?hotel=' . $hotel->name;
             $image = '/storage/' . $hotel->image;
             $resultCollection[] = [
                 'image' => $image,
