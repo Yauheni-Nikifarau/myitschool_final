@@ -106,6 +106,7 @@ class TripController extends AdminController
             }
         });
 
+        $grid->disableExport();
         $grid->filter(function ($filter) {
 
             $filter->disableIdFilter();

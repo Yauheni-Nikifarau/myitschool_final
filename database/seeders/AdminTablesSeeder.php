@@ -137,6 +137,13 @@ class AdminTablesSeeder extends Seeder
                 'icon'      => 'fa-hashtag',
                 'uri'       => 'tags',
             ],
+            [
+                'parent_id' => 0,
+                'order'     => 0,
+                'title'     => 'Hotels',
+                'icon'      => 'fa-home',
+                'uri'       => 'hotels',
+            ],
         ]);
 
         // add role to menu.

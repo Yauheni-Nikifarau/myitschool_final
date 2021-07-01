@@ -41,6 +41,8 @@ class OrdersController extends AdminController
         $grid->column('price', __('Price'));
 
         $grid->disableFilter();
+        $grid->disableExport();
+        $grid->disableCreateButton();
         $grid->actions(function ($actions) {
             $actions->disableView();
         });
