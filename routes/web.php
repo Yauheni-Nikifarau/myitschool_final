@@ -33,7 +33,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/404', function () {
-    return view('404');
+    return view('errors.404');
 });
 
 Route::get('/contacts', function () {

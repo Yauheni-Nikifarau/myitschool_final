@@ -59,11 +59,10 @@ class Order extends Model
         $template->setValue('paid', $paid);
         $template->setImageValue('image', $imagePath);
 
-        $filename = "dummy_order_{$user->name}_{$user->surname}_{$this->id}_" . Carbon::now()->format('Y-m-d_H:i:s');
-        $fileFullPath = storage_path('app/public/ordersReports' . '/' . $filename . '.docx') ;
-
+        $filename = "dummy_order_{$user->name}_{$user->surname}_{$this->id}_" . Carbon::now()->format('Y-m-d_H-i-s');
+        $dir = storage_path('app\public\ordersReports');
+        $fileFullPath = $dir . '\\' . $filename . '.docx';
         $template->saveAs($fileFullPath);
-
         return $fileFullPath;
     }
 }
