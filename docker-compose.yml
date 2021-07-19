@@ -1,0 +1,43 @@
+version: '3'
+services:
+
+  app:
+    build:
+      context: ./docker/app/
+      dockerfile: Dockerfile
+    image: yauheninikifarau/myitscoolfinal
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - app-network
+
+  db:
+    image: mysql:5.7.22
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: final
+      MYSQL_ROOT_PASSWORD: liruna95
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker/db/mysql/data:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
