@@ -13,6 +13,7 @@ RUN apt-get install -y \
     libbz2-dev \
     libpng-dev \
     libjpeg-dev \
+    libpq-dev \
     libmcrypt-dev \
     libreadline-dev \
     libfreetype6-dev \
@@ -36,7 +37,7 @@ RUN docker-php-ext-install \
     bcmath \
     opcache \
     calendar \
-    pdo_mysql
+    pdo_pgsql
 
 # 5. composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

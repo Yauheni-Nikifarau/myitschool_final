@@ -18,19 +18,18 @@ services:
       - app-network
 
   db:
-    image: mysql:5.7.22
+    image: postgres:9.5-alpine
     container_name: db
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      MYSQL_DATABASE: final
-      MYSQL_ROOT_PASSWORD: liruna95
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
+      POSTGRES_DB: final
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: liruna95
     volumes:
-      - ./docker/db/mysql/data:/var/lib/mysql
+      - ./docker/db/postgre/data:/var/lib/mysql
     networks:
       - app-network
 
